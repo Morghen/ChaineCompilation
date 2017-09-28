@@ -33,8 +33,8 @@ main:
 	movl	$1, -16(%rbp)
 	jmp	.L2
 .L3:
-	movl	-12(%rbp), %eax
 	movl	-8(%rbp), %edx
+	movl	-12(%rbp), %eax
 	addl	%edx, %eax
 	movl	%eax, -4(%rbp)
 	movl	-4(%rbp), %eax
@@ -52,11 +52,12 @@ main:
 	jle	.L3
 	movl	$.LC3, %edi
 	call	puts
+	movl	$1, %eax
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE0:
 	.size	main, .-main
-	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
+	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609"
 	.section	.note.GNU-stack,"",@progbits
